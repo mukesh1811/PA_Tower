@@ -7,7 +7,7 @@ void callTry()
 
 void draw()
 {
-  int limit_i = 38;
+  int limit_i = 38; //optimised to run in gitpod
   int limit_j = 100;
 
   for(int i =0;i<=limit_i;i++)
