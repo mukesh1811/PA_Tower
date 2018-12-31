@@ -1,3 +1,2 @@
-# hello_world
-Intro to github
-Getting to know how branching works
+# game_MLstudy
+Learning various ML algorithms using a simple one player tower defense style game
