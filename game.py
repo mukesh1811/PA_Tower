@@ -46,13 +46,6 @@ def place_up(object_width): return(0)
 def place_left(object_width): return(0)
 def place_right(object_width): return(window_size_width - object_width)
 
-##locations in screen
-# center = (window_size_width/2) - (participant_rect_width/2)
-# down = window_size_length - participant_rect_length
-# up = 0
-# left = 0
-# right = window_size_width - participant_rect_width
-
 clock = pygame.time.Clock()
 
 pygame.font.init()
@@ -227,9 +220,6 @@ while not done:
      winner_text = myfont.render("WINNER", False, (0, 0, 0))
      draw_text = myfont.render("DRAW", False, (0, 0, 0))
 
-     # screen.blit(ai_score_text,(window_size_width - 50,territory_rect_length))
-     # screen.blit(player_score_text,(window_size_width - 50,window_size_length - territory_rect_length - 30))
-
      if winner == "__PLAYER":
           screen.blit(winner_text,(window_size_width - 100,territory_rect_length))
      elif winner == "__DRAW":
@@ -243,11 +233,3 @@ while not done:
      pygame.display.flip()
 
      clock.tick(10)
-
-
-
-# center = (window_size_width/2) - (participant_rect_width/2)
-# down = window_size_length - participant_rect_length
-# up = 0
-# left = 0
-# right = window_size_width - participant_rect_width
