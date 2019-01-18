@@ -7,8 +7,8 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 
 pygame.init()
 
-window_size_length = 350
-window_size_width = 350
+window_size_length = 700
+window_size_width = 700
 screen = pygame.display.set_mode((window_size_width,window_size_length))
 
 done = False
