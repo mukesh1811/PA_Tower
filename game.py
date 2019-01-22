@@ -58,10 +58,10 @@ grey_color = (100, 100, 100)
 orange_color = (255, 100, 0)
 
 player_choice = "UP"
-player_choice_text = myfont.render("ROCK", False, (0, 0, 0))
+#player_choice_text = myfont.render("ROCK", False, (0, 0, 0))
 
 ai_choice = "UP"
-ai_choice_text = myfont.render("ROCK", False, (0, 0, 0))
+#ai_choice_text = myfont.render("ROCK", False, (0, 0, 0))
 
 winner = "__DRAW"
 
@@ -97,52 +97,44 @@ while not done:
      screen.fill(white_color)
 
      #draw player
-     pygame.draw.rect(screen, blue_color, pygame.Rect(place_center(participant_rect_length), place_down(participant_rect_width), participant_rect_length, participant_rect_width))
-     pygame.draw.circle(screen,black_color,[int(window_size_width/2),int(window_size_length) - int(participant_rect_length/2)],int(window_size_width / 50),0)
+     pygame.draw.rect(screen, blue_color, pygame.Rect(place_left(participant_rect_length) - participant_rect_length, place_down(participant_rect_width), participant_rect_length, participant_rect_width))
+     
 
      #draw ai
-     pygame.draw.rect(screen, orange_color, pygame.Rect(place_center(participant_rect_length), place_up(participant_rect_width),  participant_rect_length, participant_rect_width))
-     pygame.draw.circle(screen,black_color,[int(window_size_width/2),int(participant_rect_length/2)],int(window_size_width / 50),0)
+     pygame.draw.rect(screen, orange_color, pygame.Rect(place_right(participant_rect_length), place_down(participant_rect_width),  participant_rect_length, participant_rect_width))
 
-     #draw player zone
-     pygame.draw.rect(screen, blue_color, pygame.Rect(place_left(territory_rect_length), place_up(territory_rect_width),  territory_rect_length, territory_rect_width))
-     pygame.draw.rect(screen, blue_color, pygame.Rect(place_right(territory_rect_length), place_down(territory_rect_width),  territory_rect_length, territory_rect_width))
-
-     #draw ai zone
-     pygame.draw.rect(screen, orange_color, pygame.Rect(place_right(territory_rect_length), place_up(territory_rect_width),  territory_rect_length, territory_rect_width))
-     pygame.draw.rect(screen, orange_color, pygame.Rect(place_left(territory_rect_length), place_down(territory_rect_width),  territory_rect_length, territory_rect_width))     
+     #draw territory
+     pygame.draw.rect(screen, grey_color, pygame.Rect(place_center(territory_rect_length), place_up(territory_rect_width),  territory_rect_length, territory_rect_width))     
      
      if toPaint :
           
           ##drawing ai choice
           if ai_choice == "UP": 
-               ai_choice_text = myfont.render("ROCK", False, (0, 0, 0))
-               pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
+               ##todo
+               ##think of a quick animation for defense shield
+               #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
           
           if ai_choice == "LEFT":
-               ai_choice_text = myfont.render("PAPER", False, (0, 0, 0))
-               pygame.draw.line(screen,black_color,[0,int(participant_rect_length/2)],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,black_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
 
           if ai_choice == "RIGHT":
-               ai_choice_text = myfont.render("SCISSORS", False, (0, 0, 0))
-               pygame.draw.line(screen,black_color,[int(window_size_width/2), int(participant_rect_length/2)],[window_size_width, int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,black_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2),window_size_length - int(participant_rect_length/2)],line_width)
 
                
                
           ##drawing player choice
           if player_choice == "UP": 
-               player_choice_text = myfont.render("ROCK", False, (0, 0, 0))
-               pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
+               ##todo
+               ##think of a quick animation for defense shield
+               #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
           
           if player_choice == "LEFT":
-               player_choice_text = myfont.render("PAPER", False, (0, 0, 0))
-               pygame.draw.line(screen,black_color,[0,window_size_length - int(participant_rect_length/2)],[int(window_size_width/2),window_size_length - int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,black_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2),window_size_length - int(participant_rect_length/2)],line_width)
 
           if player_choice == "RIGHT":
-               player_choice_text = myfont.render("SCISSORS", False, (0, 0, 0))
-               pygame.draw.line(screen,black_color,[int(window_size_width/2),window_size_length - int(participant_rect_length/2)],[window_size_width,window_size_length - int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,black_color,[window_size_width,window_size_length - int(participant_rect_length/2)],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
 
-
+#------------------------------------------------------------------- translated till here on 012319
           ##Drawing winner initial in text
           if player_choice == "LEFT" and ai_choice == "LEFT":
                player_score = player_score + 1
