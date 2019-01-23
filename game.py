@@ -111,7 +111,7 @@ while not done:
                ##todo
                ##think of a quick animation for defense shield
                #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
-               print("placeholder")
+               pygame.draw.circle(screen,black_color,[int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],int(window_size_width / 50),0)
           
           if ai_choice == "LEFT":
                pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
@@ -126,7 +126,7 @@ while not done:
                ##todo
                ##think of a quick animation for defense shield
                #pygame.draw.line(screen,blue_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
-               print("placeholder")
+               pygame.draw.circle(screen,black_color,[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],int(window_size_width / 50),0)
           
           if player_choice == "LEFT":
                pygame.draw.line(screen,blue_color,[int(participant_rect_width/2),int(window_size_width - (participant_rect_width/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
@@ -191,7 +191,7 @@ while not done:
           ##todo
           ##think of a quick animation for defense shield
           #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
-          print("placeholder")
+          pygame.draw.circle(screen,black_color,[int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],int(window_size_width / 50),0)
           
      if ai_choice == "LEFT":
           if player_choice == "LEFT":
@@ -211,7 +211,9 @@ while not done:
           ##todo
           ##think of a quick animation for defense shield
           #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
-          print("placeholder")
+          pygame.draw.circle(screen,black_color,[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],int(window_size_width / 50),0)
+          if ai_choice == "RIGHT":
+               pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
           
      if player_choice == "LEFT":
           pygame.draw.line(screen,blue_color,[int(participant_rect_width/2),int(window_size_width - (participant_rect_width/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
