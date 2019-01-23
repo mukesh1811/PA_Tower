@@ -57,11 +57,11 @@ blue_color = (0, 128, 255)
 grey_color = (100, 100, 100)
 orange_color = (255, 100, 0)
 
-player_choice = "UP"
+player_choice = "LEFT"
 
-ai_choice = "UP"
+ai_choice = "LEFT"
 
-winner = "__DRAW"
+winner = "__PLAYER"
 
 line_width = 10
 
@@ -114,10 +114,10 @@ while not done:
                print("placeholder")
           
           if ai_choice == "LEFT":
-               pygame.draw.line(screen,black_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
 
           if ai_choice == "RIGHT":
-               pygame.draw.line(screen,black_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2),window_size_length - int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
 
                
                
@@ -125,14 +125,14 @@ while not done:
           if player_choice == "UP": 
                ##todo
                ##think of a quick animation for defense shield
-               #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
+               #pygame.draw.line(screen,blue_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
                print("placeholder")
           
           if player_choice == "LEFT":
-               pygame.draw.line(screen,black_color,[int(participant_rect_width/2),int(window_size_width - (participant_rect_width/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,blue_color,[int(participant_rect_width/2),int(window_size_width - (participant_rect_width/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
 
           if player_choice == "RIGHT":
-               pygame.draw.line(screen,black_color,[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,blue_color,[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
 
 #------------------------------------------------------------------- translated till here on 012319
           ##Drawing winner initial in text
@@ -186,6 +186,45 @@ while not done:
                ai_score = ai_score + 0
                winner = "__DRAW"
           
+     ##drawing ai choice
+     if ai_choice == "UP": 
+          ##todo
+          ##think of a quick animation for defense shield
+          #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
+          print("placeholder")
+          
+     if ai_choice == "LEFT":
+          if player_choice == "LEFT":
+               pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2), int(participant_rect_length/2)],line_width*2)
+               pygame.draw.line(screen,blue_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,blue_color,[int(participant_rect_width/2),int(window_size_width - (participant_rect_width/2))],[window_size_width - int(participant_rect_width/2.2),window_size_length - int(participant_rect_length/2)],line_width)
+          else:
+               pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
+
+     if ai_choice == "RIGHT":
+          pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
+
+               
+               
+     ##drawing player choice
+     if player_choice == "UP": 
+          ##todo
+          ##think of a quick animation for defense shield
+          #pygame.draw.line(screen,black_color,[int(window_size_width/2) ,int(participant_rect_length/2)],[int(window_size_width/2),(window_size_length) - int(participant_rect_length/2)],line_width)
+          print("placeholder")
+          
+     if player_choice == "LEFT":
+          pygame.draw.line(screen,blue_color,[int(participant_rect_width/2),int(window_size_width - (participant_rect_width/2))],[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],line_width)
+
+     if player_choice == "RIGHT":
+          if ai_choice == "RIGHT":
+               pygame.draw.line(screen,blue_color,[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],[int(window_size_width/2), int(participant_rect_length/2)],line_width*2)
+               pygame.draw.line(screen,orange_color,[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
+               pygame.draw.line(screen,orange_color,[int(participant_rect_width/2),int(window_size_length - (participant_rect_length/2))],[window_size_width - int(participant_rect_width/2.2),window_size_length - int(participant_rect_length/2)],line_width)
+               
+          else:
+               pygame.draw.line(screen,blue_color,[window_size_width - int(participant_rect_width/2),window_size_length - int(participant_rect_length/2)],[int(window_size_width/2), int(participant_rect_length/2)],line_width)
+               
      player_score_text = myfont.render(str(player_score), False, (0, 0, 0))
      ai_score_text = myfont.render(str(ai_score), False, (0, 0, 0))
 
@@ -193,11 +232,11 @@ while not done:
      draw_text = myfont.render("DRAW", False, (0, 0, 0))
 
      if winner == "__PLAYER":
-          screen.blit(winner_text,(window_size_width - 100,territory_rect_length))
+          screen.blit(winner_text,(window_size_width - 100,window_size_length - territory_rect_length - 70))
      elif winner == "__DRAW":
-          screen.blit(draw_text,(window_size_width - 100,window_size_length))
+          screen.blit(draw_text,(int(window_size_width/2) - 25,window_size_length - territory_rect_length-70))
      else:
-          screen.blit(winner_text,(0,window_size_length - territory_rect_length - 30))
+          screen.blit(winner_text,(10,window_size_length - territory_rect_length - 70))
 
      pygame.display.flip()
 
