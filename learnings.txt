@@ -3,3 +3,7 @@ gitpod.io
   *simply append "https://gitpod.io#" before the github url
 
 learnt to use git from vscode using a side repository https://github.com/mukesh1811/gitVSCodeLearn
+
+VSCode github integration is good. Familiarized!
+
+012419 - Finally, finalized the game play and froze. Moving forward, should program the AI in the game with various ML algorithms
